@@ -1,0 +1,1 @@
+// Pokemon card to show in list of pokemon 

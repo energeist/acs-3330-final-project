@@ -1,0 +1,1 @@
+// Detailed listing of pokemon stats and sprites

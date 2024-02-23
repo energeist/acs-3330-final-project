@@ -1,0 +1,1 @@
+// This will display the data and team of pokemon
