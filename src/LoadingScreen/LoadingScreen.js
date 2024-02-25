@@ -1,1 +1,0 @@
-// Displays a spinning ball and loading text while prefetching data

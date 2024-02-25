@@ -1,0 +1,29 @@
+.LoadingScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokeballSpinner {
+  width: 200px;
+  height: 200px;
+  animation-name: spin;
+  animation-duration: 2500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease; 
+}
+
+.progressContainer {
+  height: 40px;
+  width: 50%;
+  border: 3px solid black;
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
