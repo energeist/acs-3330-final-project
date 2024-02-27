@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const defaultPokedexState = {
   pokemon: { 1: 'bulbasaur' },
-  currentDetails: 1,
+  currentDetails: 0,
   currentPage: 1,
-  team: [],
+  team: [null, null, null, null, null, null],
 }
 
 export const pokedexSlice = createSlice({
@@ -45,7 +45,9 @@ export const {
   populatePokedex,
   currentDetails,
   incrementPage,
-  decrementPage
+  decrementPage,
+  addToTeam,
+  removeFromTeam,
 } = pokedexSlice.actions
 
 export default pokedexSlice.reducer
