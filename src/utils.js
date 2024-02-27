@@ -1,28 +1,3 @@
-// async function prefetchPokemon() {
-//   // for pokemonId in range(1, 152):
-//   const pokemonData = {};
-//   for (let pokemonId = 1; pokemonId <= 152; pokemonId++) {
-//     try {
-//       // fetch pokemon data
-//       await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-//       let data = await response.json();
-      
-//       // add to "cached" pokemonData
-//       pokemonData[pokemonId] = data;
-//     }
-//     catch (error) {
-//       console.error(error);
-//       // next?
-//     }
-//   }
-
-//   // set pokemonData in redux store
-//   // set loaded to true
-//   // fade
-
-//   return pokemonData;
-// }
-
 export const prefetchPokemon = async () => {
   // for pokemonId in range(1, 152):
   const pokemonData = {};
@@ -42,16 +17,25 @@ export const prefetchPokemon = async () => {
     }
   }
 
-  // const pokemonId = 1;
-
-  // const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-  // let data = await response.json();
-
-  // pokemonData[pokemonId] = data;
-
   // set pokemonData in redux store
   // set loaded to true
   // fade
 
   return pokemonData;
+}
+
+export function pokemonRange(pokemon, page, pokemonPerPage) {
+  const maxIndex = Object.keys(pokemon).length
+  let startIndex = (page - 1) * pokemonPerPage <= (maxIndex - pokemonPerPage)
+    ? (page - 1) * pokemonPerPage + 1
+    : maxIndex - pokemonPerPage + 1
+
+  let indices = []
+
+  for (let i = startIndex; i < startIndex + pokemonPerPage; i++) {
+    if (i > maxIndex) break;
+    indices.push(i);
+  }
+
+  return indices
 }

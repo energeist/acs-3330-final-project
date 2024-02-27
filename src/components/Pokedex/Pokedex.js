@@ -4,6 +4,8 @@ import { incrementPage, decrementPage } from '../../state/pokedex/pokedexSlice';
 
 import PokemonListCard from '../PokemonListCard/PokemonListCard';
 
+import { pokemonRange } from '../../utils';
+
 import './Pokedex.css';
 
 function Pokedex() {
@@ -18,24 +20,7 @@ function Pokedex() {
   // pagination
   const pokemonPerPage = 6;
 
-  function pokemonRange(page, pokemonPerPage) {
-    
-    const maxIndex = Object.keys(pokemon).length
-    let startIndex = (page - 1) * pokemonPerPage <= (maxIndex - pokemonPerPage)
-      ? (page - 1) * pokemonPerPage + 1
-      : maxIndex - pokemonPerPage + 1
-
-    let indices = []
-
-    for (let i = startIndex; i < startIndex + pokemonPerPage; i++) {
-      if (i > maxIndex) break;
-      indices.push(i);
-    }
-
-    return indices
-  }
-
-  let displayedPokemon = pokemonRange(currentPage, pokemonPerPage)
+  let displayedPokemon = pokemonRange(pokemon, currentPage, pokemonPerPage)
   console.log("displayedPokemon")
   console.log(displayedPokemon)
 
