@@ -1,6 +1,6 @@
 export const prefetchPokemon = async () => {
-  // for pokemonId in range(1, 152):
   const pokemonData = {};
+
   for (let pokemonId = 1; pokemonId <= 151; pokemonId++) {
     try {
       // fetch pokemon data
@@ -16,10 +16,6 @@ export const prefetchPokemon = async () => {
       continue;
     }
   }
-
-  // set pokemonData in redux store
-  // set loaded to true
-  // fade
 
   return pokemonData;
 }

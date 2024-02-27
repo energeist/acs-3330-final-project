@@ -8,7 +8,7 @@ import './PokemonDetails.css';
 function PokemonDetails(props) {
   const { id, name, types, sprite } = props;
   return (
-    <div className="PokemonDetails" >
+    <div className="PokemonDetails">
       <h1>This is the PokemonDetails Component</h1>
       <img src={sprite} alt={name} />
       <div>Rotate Image</div>
