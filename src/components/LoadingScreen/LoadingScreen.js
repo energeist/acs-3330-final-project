@@ -7,9 +7,6 @@ function LoadingScreen() {
     <div className="LoadingScreen">
       <img className="pokeballSpinner" src="./pokeball-spinner.png" alt="pokeball" />
       <p>Loading...</p>
-      <div className="progressContainer">
-        <div className="progressBar"></div>
-      </div>
     </div>
   );
 }

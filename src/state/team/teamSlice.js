@@ -9,8 +9,8 @@ export const teamSlice = createSlice({
   name: 'team',
   initialState: defaultTeamState,
   reducers: {
-    addToTeam: (state) => { },
-    removeFromTeam: (state) => { }
+    addToTeam: (state, action) => { },
+    removeFromTeam: (state, action) => { }
   },
 })
 

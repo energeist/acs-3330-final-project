@@ -5,6 +5,6 @@ import pokedexReducer from '../state/pokedex/pokedexSlice'
 
 export const store = configureStore({
   reducer: {
-    pokedexReducer,
+    pokedex: pokedexReducer,
   }
 })

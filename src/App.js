@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import './App.css';
 
@@ -7,20 +8,25 @@ import { prefetchPokemon } from './utils';
 
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import Pokedex from './components/Pokedex/Pokedex';
+import { populatePokedex } from './state/pokedex/pokedexSlice';
 
 function App() {
-
-  const [pokemonData, setPokemonData] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
 
-  async function loadPokemon() {
-    const data = await prefetchPokemon();
-    console.log(data);
-    setPokemonData(data);
-    setIsLoaded(true);
-  }
-  
-  // const pokemon = loadPokemon();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const loadPokemon = async () => {
+      const pokemonData = await prefetchPokemon();
+      dispatch(populatePokedex(pokemonData));
+      setIsLoaded(true);
+
+      console.log("Pokemon data loaded")
+      console.log(pokemonData)
+    }
+    // disabled for now to reduce API spam
+    // loadPokemon();
+  }, []);
 
   // dummy data for now to reduce API spam
   const pokemon = {
@@ -89,13 +95,18 @@ function App() {
     },
   }
 
+  // set pokemon data to dummy data for now
+  useEffect(() => {
+    dispatch(populatePokedex(pokemon));
+    setIsLoaded(true);
+  }, []);
+
   return (
     <div className="App">
       <h1>This is a redux pokedex app</h1>
       {/* Display loading screen while prefetching */}
       { isLoaded ? <Pokedex /> : <LoadingScreen /> }
       {/* Display pokedex after prefetch */}
-      {/* <Pokedex /> */}
     </div>
   );
 }
