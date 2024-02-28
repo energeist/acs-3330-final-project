@@ -36,7 +36,7 @@ export const pokedexSlice = createSlice({
       return state
     },
     removeFromTeam: (state, action) => {
-      state.team = state.team.filter(pokemon => pokemon !== action.payload)
+      state.team[action.payload] = null
       return state
     }
   }
