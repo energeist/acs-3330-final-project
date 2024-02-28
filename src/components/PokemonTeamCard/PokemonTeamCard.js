@@ -17,13 +17,9 @@ function PokemonTeamCard(props) {
       <img src={sprite} alt={name} />
       <div>Rotate Image</div>
       <h2>{name}</h2>
-      {/* <p>{types}</p> */}
+      {/* do types stuff here */}
       <button
-        onClick={(e) => {
-            console.log("PokemonTeamCard button clicked for id: " + id)
-            dispatch(currentDetails(id))
-          }
-        }
+        onClick={(e) => dispatch(currentDetails(id))}
       >Details</button>
       <button
         // remove the array item at specified index

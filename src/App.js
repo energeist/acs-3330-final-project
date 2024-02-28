@@ -23,8 +23,6 @@ function App() {
 
       console.log("Pokemon data loaded")
       console.log(pokemonData)
-      console.log(pokemonData[1])
-      console.log(pokemonData[2])
     }
     // disabled for now to reduce API spam
     // loadPokemon();

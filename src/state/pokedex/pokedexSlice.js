@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const defaultPokedexState = {
   pokemon: { 1: 'bulbasaur' },
+  pokemonPerPage: 6,
   currentDetails: 0,
   currentPage: 1,
   team: [null, null, null, null, null, null],
@@ -16,18 +17,23 @@ export const pokedexSlice = createSlice({
       return state
     },
     currentDetails: (state, action) => {
-      console.log("currentDetails action")
-      console.log(action)
-
       state.currentDetails = action.payload
       return state
     },
     incrementPage: (state) => {
-      state.currentPage += 1
+      const maxPage = Math.ceil(Object.keys(state.pokemon).length / state.pokemonPerPage)
+      
+      if (state.currentPage < maxPage) {
+        state.currentPage += 1
+      }
+      
       return state
     },
     decrementPage: (state) => {
-      state.currentPage -= 1
+      if (state.currentPage > 1) {
+        state.currentPage -= 1
+      }
+      
       return state
     },
     addToTeam: (state, action) => {

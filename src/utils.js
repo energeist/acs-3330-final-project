@@ -35,3 +35,20 @@ export function pokemonRange(pokemon, page, pokemonPerPage) {
 
   return indices
 }
+
+export function typesAsArray(types) {
+  console.log("typesAsArray")
+  console.log(types)
+  console.log("typeof types")
+  console.log(typeof types)
+  let typesArray = [];
+  if (typeof types === 'object') {
+    console.log("types is an object")
+    console.log(types)
+    typesArray = [types.type]
+  } else {
+    typesArray = types.map(type => type.type)
+  }
+
+  return typesArray
+}

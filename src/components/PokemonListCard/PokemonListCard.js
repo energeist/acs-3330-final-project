@@ -13,21 +13,12 @@ function PokemonListCard(props) {
     <div className="PokemonListCard">
       <img className="ListCardImage" src={sprite} alt={name} />
       <h2>{name}</h2>
-      {types.map((type, index) => {
-        return <p key={index}>{type.name}</p>
-      })}
+      {/* do the stuff with types here */}
       <button
-        onClick={(e) => {
-            console.log("PokemonListCard button clicked for id: " + id)
-            dispatch(currentDetails(id))
-          }
-        }
+        onClick={(e) => dispatch(currentDetails(id))}
       >Details</button>
       <button
-        onClick={(e) => {
-          console.log("PokemonDetails button clicked for id: " + id)
-          dispatch(addToTeam(id))
-        }}
+        onClick={(e) => dispatch(addToTeam(id))}
       >Add to Team</button>
     </div>
   );

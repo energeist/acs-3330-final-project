@@ -13,10 +13,6 @@ function PokemonTeam() {
     <div className="PokemonTeam">
       {
         currentTeam.map((pokemonId, index) => {
-          console.log("PokemonId inside pokemonTeam component:")
-          console.log(pokemonId)
-          console.log ("index")
-          console.log(index)
           let currentPokemon = pokemon[pokemonId]; 
           return (
             currentPokemon 

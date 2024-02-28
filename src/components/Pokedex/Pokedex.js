@@ -25,7 +25,7 @@ function Pokedex() {
   const detailedPokemon = pokemon[detailIndex]
   
   // pagination
-  const pokemonPerPage = 6;
+  const pokemonPerPage = useSelector(state => state.pokedex.pokemonPerPage);
   let displayedPokemon = pokemonRange(pokemon, currentPage, pokemonPerPage)
 
   return (
@@ -46,7 +46,6 @@ function Pokedex() {
       {/* ListCards */}
       <div className="listContainer">
         <button onClick={() => {
-          console.log("Previous button clicked")
           if (displayedPokemon[0] !== 1) {
             dispatch(decrementPage())
           }}}
@@ -75,13 +74,8 @@ function Pokedex() {
             })
           }
         </div>
-        <button onClick={() => {
-          console.log("Next button clicked")
-          console.log(displayedPokemon)
-          console.log(displayedPokemon[-1])
-          if (displayedPokemon[-1] !== Object.keys(pokemon).length) {
-            dispatch(incrementPage())
-          }}}
+        <button 
+          onClick={() => dispatch(incrementPage())}
         >Next</button>
       </div>
       {/* Team */}
