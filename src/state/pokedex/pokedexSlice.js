@@ -4,8 +4,7 @@ const defaultPokedexState = {
   pokemon: { 1: 'bulbasaur' },
   currentDetails: 0,
   currentPage: 1,
-  // team: [null, null, null, null, null, null],
-  team: [1, 2, 3, 4, 5, 6],
+  team: [null, null, null, null, null, null],
 }
 
 export const pokedexSlice = createSlice({
@@ -32,13 +31,15 @@ export const pokedexSlice = createSlice({
       return state
     },
     addToTeam: (state, action) => {
+      let nullReplaced = false
+
       state.team.map((pokemon, index) => {
-        if (pokemon === null) {
+        if (!nullReplaced && pokemon === null) {
           state.team[index] = action.payload
+          nullReplaced = true
           return state
         }
       })
-      return state
     },
     removeFromTeam: (state, action) => {
       state.team[action.payload] = null
