@@ -10,14 +10,16 @@ function PokemonDetails(props) {
   const { id, name, types, sprite } = props;
   
   const dispatch = useDispatch();
-  
+
   return (
     <div className="PokemonDetails">
       <h1>This is the PokemonDetails Component</h1>
       <img src={sprite} alt={name} />
       <div>Rotate Image</div>
       <h2>{name}</h2>
-      <p>{types}</p>
+      {types.map((type, index) => {
+        return <p key={index}>{type.type.name}</p>
+      })}
       <p>Flavour text</p>
       <div>stats</div>
       <div>moves</div>

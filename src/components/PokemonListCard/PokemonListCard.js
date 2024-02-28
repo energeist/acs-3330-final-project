@@ -13,7 +13,9 @@ function PokemonListCard(props) {
     <div className="PokemonListCard">
       <img className="ListCardImage" src={sprite} alt={name} />
       <h2>{name}</h2>
-      <p>{types}</p>
+      {types.map((type, index) => {
+        return <p key={index}>{type.name}</p>
+      })}
       <button
         onClick={(e) => {
             console.log("PokemonListCard button clicked for id: " + id)
