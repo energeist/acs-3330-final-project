@@ -13,12 +13,6 @@
   animation-timing-function: ease; 
 }
 
-.progressContainer {
-  height: 40px;
-  width: 50%;
-  border: 3px solid black;
-}
-
 @keyframes spin {
   from {
     transform:rotate(0deg);

@@ -1,0 +1,5 @@
+.PokemonTeam {
+  display: flex;
+  flex-direction: row;
+  grid-area: t;
+}

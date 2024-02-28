@@ -4,7 +4,8 @@ const defaultPokedexState = {
   pokemon: { 1: 'bulbasaur' },
   currentDetails: 0,
   currentPage: 1,
-  team: [null, null, null, null, null, null],
+  // team: [null, null, null, null, null, null],
+  team: [1, 2, 3, 4, 5, 6],
 }
 
 export const pokedexSlice = createSlice({

@@ -10,6 +10,7 @@ import PokemonDetails from '../PokemonDetails/PokemonDetails';
 import PlaceholderDetails from '../PlaceholderDetails/PlaceholderDetails';
 
 import './Pokedex.css';
+import PokemonTeam from '../PokemonTeam/PokemonTeam';
 
 function Pokedex() {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function Pokedex() {
   return (
     <div className="Pokedex">
       <h1>This is the Pokedex</h1>
+      {/* Details component */}
       {
         detailIndex > 0 
         ? <PokemonDetails 
@@ -41,7 +43,8 @@ function Pokedex() {
         : <PlaceholderDetails />
       }
       <div className="divider"></div>
-      <div>
+      {/* ListCards */}
+      <div className="listContainer">
         <button onClick={() => {
           console.log("Previous button clicked")
           if (displayedPokemon[0] !== 1) {
@@ -49,18 +52,20 @@ function Pokedex() {
           }}}
         >Previous</button>
         <div className="pokemonList">
-          {displayedPokemon.map((key) => {
-            console.log("key: " + key)
-            return (
-            <PokemonListCard 
-              id={key}
-              key={key}
-              name={pokemon[key].name}
-              types={pokemon[key].types}
-              sprite={pokemon[key].sprites.front_default}
-            /> 
-            );
-          })}
+          {
+            displayedPokemon.map((key) => {
+              console.log("key: " + key)
+              return (
+              <PokemonListCard 
+                id={key}
+                key={key}
+                name={pokemon[key].name}
+                types={pokemon[key].types}
+                sprite={pokemon[key].sprites.front_default}
+              /> 
+              )
+            })
+          }
         </div>
         <button onClick={() => {
           console.log("Next button clicked")
@@ -71,6 +76,8 @@ function Pokedex() {
           }}}
         >Next</button>
       </div>
+      {/* Team */}
+      <PokemonTeam />
     </div>
   );
 }
