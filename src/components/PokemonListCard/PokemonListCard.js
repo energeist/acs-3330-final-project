@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 // import { incrementPage, decrementPage } from '../../state/pokedex/pokedexSlice';
 
 import './PokemonListCard.css';
-import { currentDetails } from '../../state/pokedex/pokedexSlice';
+import { currentDetails, addToTeam } from '../../state/pokedex/pokedexSlice';
 
 function PokemonListCard(props) {
   const { id, name, types, sprite } = props;
@@ -21,7 +21,12 @@ function PokemonListCard(props) {
           }
         }
       >Details</button>
-      <button>Add to Team</button>
+      <button
+        onClick={(e) => {
+          console.log("PokemonDetails button clicked for id: " + id)
+          dispatch(addToTeam(id))
+        }}
+      >Add to Team</button>
     </div>
   );
 }

@@ -32,7 +32,12 @@ export const pokedexSlice = createSlice({
       return state
     },
     addToTeam: (state, action) => {
-      state.team.push(action.payload)
+      state.team.map((pokemon, index) => {
+        if (pokemon === null) {
+          state.team[index] = action.payload
+          return state
+        }
+      })
       return state
     },
     removeFromTeam: (state, action) => {
