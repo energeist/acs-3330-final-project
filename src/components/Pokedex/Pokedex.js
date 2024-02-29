@@ -30,43 +30,44 @@ function Pokedex() {
 
   return (
     <div className="Pokedex">
-      {/* Details component */}
-      {
-        detailIndex > 0 
-        ? <PokemonDetails 
-            id={detailIndex}
-            name={detailedPokemon.name}
-            types={detailedPokemon.types}
-            sprite={detailedPokemon.sprites.front_default}
-          />
-        : <PlaceholderDetails />
-      }
-      <div className="divider"></div>
-      {/* ListCards */}
-      <div className="listContainer">
-        <button onClick={() => {
-          if (displayedPokemon[0] !== 1) {
-            dispatch(decrementPage())
-          }}}
-        >Previous</button>
-        <div className="pokemonList">
-          {
-            displayedPokemon.map((key) => {
-              return (
-              <PokemonListCard 
-                id={key}
-                key={key}
-                name={pokemon[key].name}
-                types={pokemon[key].types}
-                sprite={pokemon[key].sprites.front_default}
-              /> 
-              )
-            })
-          }
+      <div className="mainContainer">
+        {/* Details component */}
+        {
+          detailIndex > 0 
+          ? <PokemonDetails 
+              id={detailIndex}
+              name={detailedPokemon.name}
+              types={detailedPokemon.types}
+              sprite={detailedPokemon.sprites.front_default}
+            />
+          : <PlaceholderDetails />
+        }
+        {/* ListCards */}
+        <div className="listContainer">
+          <button onClick={() => {
+            if (displayedPokemon[0] !== 1) {
+              dispatch(decrementPage())
+            }}}
+          >Previous</button>
+          <div className="pokemonList">
+            {
+              displayedPokemon.map((key) => {
+                return (
+                <PokemonListCard 
+                  id={key}
+                  key={key}
+                  name={pokemon[key].name}
+                  types={pokemon[key].types}
+                  sprite={pokemon[key].sprites.front_default}
+                /> 
+                )
+              })
+            }
+          </div>
+          <button 
+            onClick={() => dispatch(incrementPage())}
+          >Next</button>
         </div>
-        <button 
-          onClick={() => dispatch(incrementPage())}
-        >Next</button>
       </div>
       {/* Team */}
       <PokemonTeam />

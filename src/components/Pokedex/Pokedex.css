@@ -1,11 +1,18 @@
 .Pokedex {
   /* width: 1000px; */
-  display: grid;
+  /* display: grid; */
   margin: auto;
-  grid-template-areas:
-    " d d m l l "
-    " d d m l l "
-    " t t t t t ";
+  /* grid-template-areas:
+    " d d l l "
+    " d d l l "
+    " t t t t "; */
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .pokemonList {
@@ -13,9 +20,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* margin: auto; */
+  margin-left: 30px;
   padding: 0;
-  grid-area: l;
+  /* grid-area: l; */
 }
 
 .listContainer {
@@ -40,13 +47,6 @@ h1 {
   padding: 0;
 }
 
-.divider {
-  min-width: 25px;
-  width: 100%;
-  background-color: rgb(199, 39, 39);
-  grid-area: m;
-}
-
 .bug {
   background-color: var(--bug);
 }
@@ -57,6 +57,10 @@ h1 {
 
 .electric {
   background-color: var(--electric);
+}
+
+.fairy {
+  background-color: var(--fairy);
 }
 
 .fighting {

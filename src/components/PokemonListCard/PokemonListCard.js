@@ -14,8 +14,6 @@ function PokemonListCard(props) {
   
   const dispatch = useDispatch();
 
-  console.log("PokemonListCard")
-  console.log(typesArray)
   return (
     <div className="PokemonListCard">
       <img className="ListCardImage" src={sprite} alt={name} />
@@ -23,8 +21,6 @@ function PokemonListCard(props) {
       <div className="typesContainer">
       {
         typesArray.map((type, index) => {
-          console.log("what the fuck is going on")
-          console.log(type)
           return (
           <div 
             key={index}
