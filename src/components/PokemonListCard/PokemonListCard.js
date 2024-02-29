@@ -20,6 +20,7 @@ function PokemonListCard(props) {
     <div className="PokemonListCard">
       <img className="ListCardImage" src={sprite} alt={name} />
       <h2>{name}</h2>
+      <div className="typesContainer">
       {
         typesArray.map((type, index) => {
           console.log("what the fuck is going on")
@@ -32,6 +33,7 @@ function PokemonListCard(props) {
           )
         })
       }
+      </div>
       <button
         onClick={(e) => dispatch(currentDetails(id))}
       >Details</button>

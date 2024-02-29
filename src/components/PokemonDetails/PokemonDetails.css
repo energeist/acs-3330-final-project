@@ -1,0 +1,17 @@
+.PokemonDetails {
+  width: var(--pokedex-section-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-right: 30px;
+  border: 3px solid black;
+  border-radius: 10px;
+  grid-area: d;
+  background: linear-gradient(135deg, #e6f0a3 0%,#d2e638 20%,#d2e638 33%,#d2e638 46%,#aadb30 66%,#d2e638 75%);
+}
+
+.PokemonDetails > img {
+  width: 250px;
+  height: 250px;
+}

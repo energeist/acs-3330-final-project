@@ -1,3 +1,13 @@
+.PlaceholderDetails {
+  width: var(--pokedex-section-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: auto;
+}
+
 .detailsSpinner {
   width: 200px;
   height: 200px;

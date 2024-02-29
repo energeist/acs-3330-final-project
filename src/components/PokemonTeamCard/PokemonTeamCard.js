@@ -17,20 +17,20 @@ function PokemonTeamCard(props) {
 
   return (
     <div className="PokemonTeamCard">
-      <h1>This a PokemonTeamCard</h1>
       <img src={sprite} alt={name} />
-      <div>Rotate Image</div>
       <h2>{name}</h2>
-      {
-        typesArray.map((type, index) => {
-          return (
-          <div 
-            key={index}
-            className={`teamType ${type}`}
-          >{type}</div>
-          )
-        })
-      }
+      <div className="typesContainer">
+        {
+          typesArray.map((type, index) => {
+            return (
+            <div 
+              key={index}
+              className={`teamType ${type}`}
+            >{type}</div>
+            )
+          })
+        }
+      </div>
       <button
         onClick={(e) => dispatch(currentDetails(id))}
       >Details</button>

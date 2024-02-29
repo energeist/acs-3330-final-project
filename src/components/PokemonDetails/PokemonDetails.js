@@ -17,21 +17,21 @@ function PokemonDetails(props) {
 
   return (
     <div className="PokemonDetails">
-      <h1>This is the PokemonDetails Component</h1>
       <img src={sprite} alt={name} />
-      <div>Rotate Image</div>
       <h2>{name}</h2>
-      {
-        typesArray.map((type, index) => {
-          console.log(type)
-          return (
-          <div 
-            key={index}
-            className={`details-${type}`}
-          >{type}</div>
-          )
-        })
-      }
+      <div className="typesContainer">
+        {
+          typesArray.map((type, index) => {
+            console.log(type)
+            return (
+            <div 
+              key={index}
+              className={`detailsType ${type}`}
+            >{type}</div>
+            )
+          })
+        }
+      </div>
       <p>Flavour text</p>
       <div>stats</div>
       <div>moves</div>

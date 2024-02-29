@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
@@ -12,4 +12,39 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+:root {
+  --pokedex-section-width: 700px;
+  --divider-width: 25px;
+
+  --bug: #a8b820;
+  --dragon: #7038f8;
+  --electric: #f8d030;
+  --fighting: #c03028;
+  --fire: #f08030;
+  --flying: #a890f0;
+  --ghost: #705898;
+  --grass: #78c850;
+  --ground: #e0c068;
+  --ice: #98d8d8;
+  --normal: #a8a878;
+  --poison: #a040a0;
+  --psychic: #f85888;
+  --rock: #b8a038;
+  --water: #6890f0;
+
+  --screen-gradient: linear-gradient(
+    135deg, 
+    #e6f0a3 0%,
+    #d2e638 20%,
+    #d2e638 33%,
+    #d2e638 46%,
+    #aadb30 66%,
+    #d2e638 75%
+  )
 }

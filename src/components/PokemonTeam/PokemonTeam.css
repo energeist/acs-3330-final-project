@@ -1,5 +1,11 @@
 .PokemonTeam {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 30px;
+  border: 3px solid black;
+  border-radius: 10px;
   grid-area: t;
 }

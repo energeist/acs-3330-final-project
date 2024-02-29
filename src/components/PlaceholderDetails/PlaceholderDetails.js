@@ -3,7 +3,6 @@ import './PlaceholderDetails.css';
 function PokemonDetails() {
   return (
     <div className="PlaceholderDetails">
-      <h1>This is the PlaceholderDetails Component</h1>
       <img className="detailsSpinner" src="./pokeball-spinner.png" alt="pokeball" />
       <p>Waiting...</p>
     </div>

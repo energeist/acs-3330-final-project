@@ -30,7 +30,6 @@ function Pokedex() {
 
   return (
     <div className="Pokedex">
-      <h1>This is the Pokedex</h1>
       {/* Details component */}
       {
         detailIndex > 0 
