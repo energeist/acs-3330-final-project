@@ -20,9 +20,6 @@ function App() {
       const pokemonData = await prefetchPokemon();
       dispatch(populatePokedex(pokemonData));
       setIsLoaded(true);
-
-      console.log("Pokemon data loaded")
-      console.log(pokemonData)
     }
 
     loadPokemon();
