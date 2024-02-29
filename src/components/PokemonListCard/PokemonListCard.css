@@ -3,10 +3,19 @@
   height: 300px;
   border: 1px solid black;
   border-radius: 10px;
-  margin: 10px;
+  margin: 5px;
+  padding: 10px;
   border: 3px solid black;
   border-radius: 10px;
   background: var(--screen-gradient);
+}
+
+.listCardType {
+  font-size: 0.75rem;
+  height: 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .PokemonListCard img {

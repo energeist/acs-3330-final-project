@@ -25,7 +25,7 @@ function PokemonTeamCard(props) {
             return (
             <div 
               key={index}
-              className={`teamType ${type}`}
+              className={`teamCardType ${type}`}
             >{type}</div>
             )
           })

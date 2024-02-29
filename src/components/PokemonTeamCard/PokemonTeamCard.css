@@ -11,6 +11,14 @@
   background: var(--screen-gradient);
 }
 
+.teamCardType {
+  font-size: 0.75rem;
+  height: 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 .PokemonTeamCard > img {
   width: 125px;
   height: 125px;

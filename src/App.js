@@ -24,7 +24,7 @@ function App() {
       console.log("Pokemon data loaded")
       console.log(pokemonData)
     }
-    // disabled for now to reduce API spam
+
     loadPokemon();
   }, []);
 
@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>This is a redux pokedex app</h1>
+      <h1>Redux Pokedex</h1>
       {/* Display loading screen while prefetching */}
       { isLoaded ? <Pokedex /> : <LoadingScreen /> }
       {/* Display pokedex after prefetch */}

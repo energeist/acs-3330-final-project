@@ -9,7 +9,6 @@ import { currentFlavorText, addToTeam } from '../../state/pokedex/pokedexSlice'
 import { typesAsArray } from '../../utils';
 
 import './PokemonDetails.css';
-import { current } from '@reduxjs/toolkit';
 
 function PokemonDetails(props) {
   const { id, name, types, sprite } = props;
@@ -21,15 +20,13 @@ function PokemonDetails(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    setIsTextLoaded(false);
     const loadFlavorText = async () => {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
       const data = await response.json();
 
       dispatch(currentFlavorText(data.flavor_text_entries[0].flavor_text));
       setIsTextLoaded(true);
-
-      console.log("Flavor Text Loaded:")
-      console.log(data.flavor_text_entries[0].flavor_text)
     }
 
     loadFlavorText();
@@ -40,7 +37,7 @@ function PokemonDetails(props) {
   return (
     <div className="PokemonDetails">
       <img src={sprite} alt={name} />
-      <h2>{name}</h2>
+      <h1>{name}</h1>
       <div className="typesContainer">
         {
           typesArray.map((type, index) => {
@@ -58,8 +55,6 @@ function PokemonDetails(props) {
         ? <p>{flavorText}</p> 
         : <p>Loading...</p>
       }
-      <div>stats</div>
-      <div>moves</div>
       <button
         onClick={(e) => {dispatch(addToTeam(id))}}
       >Add to Team</button>
