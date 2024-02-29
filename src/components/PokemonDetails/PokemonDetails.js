@@ -1,19 +1,41 @@
 // Detailed listing of pokemon stats and sprites
 // Pokemon card to show in list of pokemon // This will display the data and team of pokemon
-import { useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
 
-import { addToTeam } from '../../state/pokedex/pokedexSlice'
+import { useSelector, useDispatch } from 'react-redux';
+
+import { currentFlavorText, addToTeam } from '../../state/pokedex/pokedexSlice'
 
 import { typesAsArray } from '../../utils';
 
 import './PokemonDetails.css';
+import { current } from '@reduxjs/toolkit';
 
 function PokemonDetails(props) {
   const { id, name, types, sprite } = props;
   
   const typesArray = typesAsArray(types);
 
+  const [isTextLoaded, setIsTextLoaded] = useState(false);
+
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const loadFlavorText = async () => {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+      const data = await response.json();
+
+      dispatch(currentFlavorText(data.flavor_text_entries[0].flavor_text));
+      setIsTextLoaded(true);
+
+      console.log("Flavor Text Loaded:")
+      console.log(data.flavor_text_entries[0].flavor_text)
+    }
+
+    loadFlavorText();
+  }, [id, dispatch]);
+
+  const flavorText = useSelector(state => state.pokedex.flavorText);  
 
   return (
     <div className="PokemonDetails">
@@ -22,7 +44,6 @@ function PokemonDetails(props) {
       <div className="typesContainer">
         {
           typesArray.map((type, index) => {
-            console.log(type)
             return (
             <div 
               key={index}
@@ -32,7 +53,11 @@ function PokemonDetails(props) {
           })
         }
       </div>
-      <p>Flavour text</p>
+      {
+        isTextLoaded 
+        ? <p>{flavorText}</p> 
+        : <p>Loading...</p>
+      }
       <div>stats</div>
       <div>moves</div>
       <button

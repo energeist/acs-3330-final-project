@@ -4,6 +4,7 @@ const defaultPokedexState = {
   pokemon: { 1: 'bulbasaur' },
   pokemonPerPage: 6,
   currentDetails: 0,
+  flavorText: '',
   currentPage: 1,
   team: [null, null, null, null, null, null],
 }
@@ -18,6 +19,10 @@ export const pokedexSlice = createSlice({
     },
     currentDetails: (state, action) => {
       state.currentDetails = action.payload
+      return state
+    },
+    currentFlavorText: (state, action) => {
+      state.flavorText = action.payload
       return state
     },
     incrementPage: (state) => {
@@ -57,6 +62,7 @@ export const pokedexSlice = createSlice({
 export const { 
   populatePokedex,
   currentDetails,
+  currentFlavorText,
   incrementPage,
   decrementPage,
   addToTeam,
