@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# ACS-3330 FINAL PROJECT
+## REDUX POKEDEX
+
+This app will prefetch data for the 151 Generation 1 pokemon and display them with pagination.  Select a pokemon to view details or add to a team!
+
+Build with React, using Redux for state management.  Data sourced from [PokeAPI](https://pokeapi.co/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
