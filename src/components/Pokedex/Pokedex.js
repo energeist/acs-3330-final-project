@@ -53,21 +53,12 @@ function Pokedex() {
         <div className="pokemonList">
           {
             displayedPokemon.map((key) => {
-              console.log("types")
-              console.log(pokemon[key].types)
-              console.log(typeof pokemon[key].types)
-
-              let types = []
-
-              types.push(pokemon[key].types)
-              console.log("This is your types thing")
-              console.log(types)
               return (
               <PokemonListCard 
                 id={key}
                 key={key}
                 name={pokemon[key].name}
-                types={types}
+                types={pokemon[key].types}
                 sprite={pokemon[key].sprites.front_default}
               /> 
               )

@@ -23,11 +23,12 @@ function PokemonDetails(props) {
       <h2>{name}</h2>
       {
         typesArray.map((type, index) => {
+          console.log(type)
           return (
           <div 
             key={index}
-            className={`details-${type.name}`}
-          >{type.name}</div>
+            className={`details-${type}`}
+          >{type}</div>
           )
         })
       }
@@ -35,7 +36,7 @@ function PokemonDetails(props) {
       <div>stats</div>
       <div>moves</div>
       <button
-        onClick={(e) => dispatch(addToTeam(id))}
+        onClick={(e) => {dispatch(addToTeam(id))}}
       >Add to Team</button>
     </div>
   );
